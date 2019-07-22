@@ -7,6 +7,7 @@ public class Gun : MonoBehaviour
     [SerializeField] GameObject crosshairs;
     [SerializeField] Camera camera;
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] GameObject bulletStart;
 
     [SerializeField] float bulletSpeed = 60.0f;
 
@@ -41,7 +42,7 @@ public class Gun : MonoBehaviour
     void fireBullet(Vector2 direction, float rotationZ)
     {
         GameObject b = Instantiate(bulletPrefab) as GameObject;
-        b.transform.position = transform.position;
+        b.transform.position = bulletStart.transform.position;
         b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
     }
