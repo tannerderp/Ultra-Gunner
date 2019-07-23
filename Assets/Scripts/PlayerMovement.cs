@@ -40,8 +40,18 @@ public class PlayerMovement : MonoBehaviour
         if(IsGrounded() && (Input.GetKeyDown(KeyCode.UpArrow)||Input.GetKeyDown(KeyCode.W)))
         {
             rigidBody.velocity = Vector2.up * jumpVel;
+            animator.SetBool("IsJumping", true);
         }
 
+        if(IsGrounded())
+        {
+            animator.SetBool("IsJumping", false);
+        }
+        else
+        {
+            animator.SetBool("IsJumping", true);
+        }
+ 
         if(rawHorizontal != 0)
         {
             direction = rawHorizontal;
