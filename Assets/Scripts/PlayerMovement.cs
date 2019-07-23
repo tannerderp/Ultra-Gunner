@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rigidBody;
     BoxCollider2D boxCollider;
     Gun gunScript;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         gunScript = gun.GetComponent<Gun>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -49,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
         var change = absoluteValue * direction;
         transform.localScale = new Vector2(change, transform.localScale.y);
         gun.transform.localScale = new Vector2(Mathf.Abs(gun.transform.localScale.x)*direction, gun.transform.localScale.y);
+        animator.SetFloat("Speed", Mathf.Abs(horizontal*moveSpeed));
     }
 
     private bool IsGrounded()
