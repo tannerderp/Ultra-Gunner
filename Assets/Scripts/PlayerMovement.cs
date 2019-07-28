@@ -69,4 +69,12 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D boxCast = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 1f, layerMask);
         return boxCast.collider != null;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision) //get hit by alien bullets
+    {
+        if (collision.name == "Alien Bullet(Clone)")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
