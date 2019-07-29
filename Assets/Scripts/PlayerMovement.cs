@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] GameObject gun;
 
+    public float health = 100;
     float direction = 1f;
 
     Rigidbody2D rigidBody;
@@ -74,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.name == "Alien Bullet(Clone)")
         {
+            health -= 5;
             Destroy(collision.gameObject);
         }
     }
