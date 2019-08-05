@@ -13,6 +13,7 @@ public class Gun : MonoBehaviour
 
     private Vector3 target;
     public float playerDirection = 1f;
+    private int bulletFireCooldown = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -30,13 +31,15 @@ public class Gun : MonoBehaviour
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButton(0) && bulletFireCooldown > 15)
         {
+            bulletFireCooldown = 0;
             float distance = difference.magnitude;
             Vector2 direction = difference / distance;
             direction.Normalize();
             fireBullet(direction*playerDirection, rotationZ+90);
         }
+        bulletFireCooldown++;
     }
 
     void fireBullet(Vector2 direction, float rotationZ)

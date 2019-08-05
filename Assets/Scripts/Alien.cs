@@ -11,7 +11,7 @@ public class Alien : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject bulletStart;
 
-    int bulletFireCooldown = 80;
+    int bulletFireCooldown = 100;
 
     Animator animator;
     Rigidbody2D rigidBody;
@@ -39,7 +39,7 @@ public class Alien : MonoBehaviour
     {
         bulletFireCooldown++;
         CheckCanFire();
-        if(bulletFireCooldown >= 80)
+        if(bulletFireCooldown >= 100)
         {
             HandleMovement();
         }
@@ -59,7 +59,7 @@ public class Alien : MonoBehaviour
     private void CheckCanFire() //checks if it can shoot, and does if it can. I couldn't figure out a good name
     {
         Vector2 distance = transform.position - player.transform.position;
-        if(Mathf.Abs(distance.x)<7 && bulletFireCooldown > 80)
+        if(Mathf.Abs(distance.x)<7 && bulletFireCooldown > 100)
         {
             FireBullet();
             bulletFireCooldown = 0;
