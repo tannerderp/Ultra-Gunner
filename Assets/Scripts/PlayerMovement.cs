@@ -78,5 +78,10 @@ public class PlayerMovement : MonoBehaviour
             health -= 5;
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.tag == "player alien collider thing")
+        {
+            health -= 5;
+        }
     }
+
 }

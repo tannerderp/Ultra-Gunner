@@ -6,11 +6,15 @@ public class Alien : MonoBehaviour
 {
     [SerializeField] int health;
     [SerializeField] float bulletSpeed = -10f;
+    [SerializeField] float moveSpeed = 4f;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject player;
     [SerializeField] GameObject bulletStart;
 
-    int bulletFireCooldown = 0;
+    int bulletFireCooldown = 80;
+
+    Animator animator;
+    Rigidbody2D rigidBody;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,16 +29,37 @@ public class Alien : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody2D>();
+    }
+
     private void Update()
     {
         bulletFireCooldown++;
         CheckCanFire();
+        if(bulletFireCooldown >= 80)
+        {
+            HandleMovement();
+        }
+        else
+        {
+            animator.SetFloat("speed", 0);
+        }
+    }
+
+    private void HandleMovement()
+    {
+        float direction = transform.localScale.x / Mathf.Abs(transform.localScale.x);
+        rigidBody.velocity = new Vector2(direction * moveSpeed, rigidBody.velocity.y);
+        animator.SetFloat("speed", Mathf.Abs(rigidBody.velocity.x));
     }
 
     private void CheckCanFire() //checks if it can shoot, and does if it can. I couldn't figure out a good name
     {
         Vector2 distance = transform.position - player.transform.position;
-        if(Mathf.Abs(distance.x)<7 && bulletFireCooldown > 120)
+        if(Mathf.Abs(distance.x)<7 && bulletFireCooldown > 80)
         {
             FireBullet();
             bulletFireCooldown = 0;
