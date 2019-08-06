@@ -5,11 +5,12 @@ using UnityEngine;
 public class Alien : MonoBehaviour
 {
     [SerializeField] int health;
-    [SerializeField] float bulletSpeed = -10f;
+    [SerializeField] float bulletSpeed = 10f;
     [SerializeField] float moveSpeed = 4f;
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject player;
     [SerializeField] GameObject bulletStart;
+    [SerializeField] bool canShoot; //the difference between a dark and light alien. dark ones don't shoot
 
     int bulletFireCooldown = 100;
 
@@ -38,7 +39,10 @@ public class Alien : MonoBehaviour
     private void Update()
     {
         bulletFireCooldown++;
-        CheckCanFire();
+        if (canShoot == true)
+        {
+            CheckCanFire();
+        }
         if(bulletFireCooldown >= 100)
         {
             HandleMovement();
@@ -68,8 +72,9 @@ public class Alien : MonoBehaviour
 
     private void FireBullet()
     {
+        float direction = transform.localScale.x / Mathf.Abs(transform.localScale.x);
         GameObject b = Instantiate(bulletPrefab) as GameObject;
         b.transform.position = bulletStart.transform.position;
-        b.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
+        b.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed*direction, 0);
     }
 }
