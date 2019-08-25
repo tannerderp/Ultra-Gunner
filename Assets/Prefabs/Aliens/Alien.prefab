@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2382156740085865794}
   - component: {fileID: 2382156740085865798}
   - component: {fileID: 2382156740085865799}
+  - component: {fileID: 1034844682}
   m_Layer: 10
   m_Name: alien
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2382156740085865821}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.42, y: -0.76, z: 0}
+  m_LocalPosition: {x: 6.85, y: 4.18, z: 0}
   m_LocalScale: {x: -0.273, y: 0.273, z: 0.273}
   m_Children:
   - {fileID: 2382156741707563521}
@@ -171,6 +172,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1034844682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2382156740085865821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ba58002beb8a14fa1712df3bc74be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
 --- !u!1 &2382156741526804932
 GameObject:
   m_ObjectHideFlags: 0
