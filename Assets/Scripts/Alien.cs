@@ -13,6 +13,7 @@ public class Alien : MonoBehaviour
     [SerializeField] bool canShoot; //the difference between a dark and light alien. dark ones don't shoot
 
     int bulletFireCooldown = 100;
+    private bool OnScreen = false;
 
     Animator animator;
     Rigidbody2D rigidBody;
@@ -25,18 +26,21 @@ public class Alien : MonoBehaviour
 
     private void Update()
     {
-        bulletFireCooldown++;
-        if (canShoot == true)
+        if (OnScreen == true)
         {
-            CheckCanFire();
-        }
-        if(bulletFireCooldown >= 100)
-        {
-            HandleMovement();
-        }
-        else
-        {
-            animator.SetFloat("speed", 0);
+            bulletFireCooldown++;
+            if (canShoot == true)
+            {
+                CheckCanFire();
+            }
+            if (bulletFireCooldown >= 100)
+            {
+                HandleMovement();
+            }
+            else
+            {
+                animator.SetFloat("speed", 0);
+            }
         }
     }
 
@@ -63,5 +67,15 @@ public class Alien : MonoBehaviour
         GameObject b = Instantiate(bulletPrefab) as GameObject;
         b.transform.position = bulletStart.transform.position;
         b.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed*direction, 0);
+    }
+
+    private void OnBecameVisible()
+    {
+        OnScreen = true;
+    }
+
+    private void OnBecameInvisible()
+    {
+        OnScreen = false;
     }
 }
