@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rigidBody;
     BoxCollider2D boxCollider;
     Gun gunScript;
+    Lives livesScript;
     Animator animator;
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         gunScript = gun.GetComponent<Gun>();
+        livesScript = FindObjectOfType<Lives>();
         animator = GetComponent<Animator>();
     }
 
@@ -30,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Movement();
+        UpdateLivesHealth();
     }
 
     private void Movement()
@@ -81,6 +84,17 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "player alien collider thing")
         {
             health -= 5;
+        }
+    }
+
+    private void UpdateLivesHealth() //update the health variable in the lives game object
+    {
+        livesScript.playerHealth = health;
+        if(health < 1)
+        {
+            livesScript.lives--;
+            FindObjectOfType<LevelExit>().ReloadScene();
+            health = 100;
         }
     }
 

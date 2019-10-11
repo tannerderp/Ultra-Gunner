@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    PlayerMovement playerScript;
 
     Slider slider;
 
@@ -13,11 +13,12 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         slider = GetComponent<Slider>();
+        playerScript = FindObjectOfType<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        slider.value = player.GetComponent<PlayerMovement>().health;
+        slider.value = FindObjectOfType<PlayerMovement>().health;
     }
 }

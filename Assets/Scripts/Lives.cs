@@ -7,7 +7,9 @@ public class Lives : MonoBehaviour
 {
     private TextMeshProUGUI text;
 
-    [SerializeField] private int lives;
+    [SerializeField] public int lives;
+
+    public float playerHealth = 100;
 
     // Start is called before the first frame update
     void Start()
