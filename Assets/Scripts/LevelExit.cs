@@ -16,4 +16,9 @@ public class LevelExit : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void LoadGameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+        Cursor.visible = true;
+    }
 }

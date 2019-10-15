@@ -93,8 +93,17 @@ public class PlayerMovement : MonoBehaviour
         if(health < 1)
         {
             livesScript.lives--;
-            FindObjectOfType<LevelExit>().ReloadScene();
-            health = 100;
+            if (livesScript.lives < 1)
+            {
+                FindObjectOfType<DontDestroy>().Reset();
+                FindObjectOfType<LevelExit>().LoadGameOver();
+                health = 100;
+            }
+            else
+            {
+                FindObjectOfType<LevelExit>().ReloadScene();
+                health = 100;
+            }
         }
     }
 

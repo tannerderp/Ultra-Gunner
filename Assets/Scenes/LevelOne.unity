@@ -5035,6 +5035,11 @@ PrefabInstance:
       propertyPath: livesCounter
       value: 
       objectReference: {fileID: 894988847}
+    - target: {fileID: 885779361183007413, guid: d7cb7f2fdc6d5a64db7f8e9d63a906b0,
+        type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7cb7f2fdc6d5a64db7f8e9d63a906b0, type: 3}
 --- !u!1001 &1287395673414406965
@@ -5385,6 +5390,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1061622949, guid: 894a0bf71e6a16e4a89e1f057413cc48, type: 3}
+      propertyPath: lives
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 894a0bf71e6a16e4a89e1f057413cc48, type: 3}
