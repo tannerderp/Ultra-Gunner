@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void UpdateLivesHealth() //update the health variable in the lives game object
+    public void UpdateLivesHealth() //update the health variable in the lives game object
     {
         livesScript.playerHealth = health;
         if(health < 1)
