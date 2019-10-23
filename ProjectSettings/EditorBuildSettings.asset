@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/AbductionCutscene.unity
     guid: 99f592d963c883f40969798df65b7e4b
   - enabled: 1
+    path: Assets/Scenes/LevelThree.unity
+    guid: 60de89a7290797f4f91201c9c5a7cc5e
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 11b57f917c1e2834a84011b702f20965
   m_configObjects: {}
