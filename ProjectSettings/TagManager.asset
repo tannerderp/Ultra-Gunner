@@ -6,6 +6,7 @@ TagManager:
   tags:
   - player alien collider thing
   - fall collider
+  - Donkey Nuetron
   layers:
   - Default
   - TransparentFX

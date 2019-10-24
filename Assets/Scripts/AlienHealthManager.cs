@@ -21,6 +21,10 @@ public class AlienHealthManager : MonoBehaviour
                 }
                 else
                 {
+                    if(gameObject.tag == "Donkey Nuetron")
+                    {
+                        FindObjectOfType<Door>().donkeyIsAlive = false;
+                    }
                     Destroy(gameObject);
                 }
             }
