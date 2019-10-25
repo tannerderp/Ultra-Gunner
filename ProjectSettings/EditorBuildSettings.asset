@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelThree.unity
     guid: 60de89a7290797f4f91201c9c5a7cc5e
   - enabled: 1
+    path: Assets/Scenes/KingEncounterCutscene.unity
+    guid: 2f08e374a69640847a6fa392201bf171
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 11b57f917c1e2834a84011b702f20965
   m_configObjects: {}
