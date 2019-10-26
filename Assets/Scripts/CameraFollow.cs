@@ -6,6 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
     [SerializeField] Transform player; //transform component of the player
     [SerializeField] bool followVertical = false; //whether the camera follows the player vertically or not
+    [SerializeField] float cameraYOffset = 0f; //literally just so the player has more room to see the boss in the final boss level
 
     private float cameraY = 0;
 
@@ -14,7 +15,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (followVertical == true && player.position.y>0)
         {
-            cameraY = player.position.y;
+            cameraY = player.position.y+cameraYOffset;
         }
         else
         {

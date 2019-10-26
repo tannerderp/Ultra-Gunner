@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/KingEncounterCutscene.unity
     guid: 2f08e374a69640847a6fa392201bf171
   - enabled: 1
+    path: Assets/Scenes/FinalBoss.unity
+    guid: c1e7ceb502ae09e47a973707e6048a10
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 11b57f917c1e2834a84011b702f20965
   m_configObjects: {}
