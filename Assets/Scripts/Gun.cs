@@ -11,6 +11,8 @@ public class Gun : MonoBehaviour
 
     [SerializeField] float bulletSpeed = 60.0f;
 
+    AudioSource shootSound;
+
     private Vector3 target;
     public float playerDirection = 1f;
     private int bulletFireCooldown = 0;
@@ -18,6 +20,7 @@ public class Gun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shootSound = GetComponent<AudioSource>();
         Cursor.visible = false;
     }
 
@@ -38,6 +41,7 @@ public class Gun : MonoBehaviour
             Vector2 direction = difference / distance;
             direction.Normalize();
             fireBullet(direction*playerDirection, rotationZ+90);
+            shootSound.Play();
         }
         bulletFireCooldown++;
     }

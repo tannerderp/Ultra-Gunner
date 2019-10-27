@@ -1388,6 +1388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1980673022}
   followVertical: 0
+  cameraYOffset: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1784,7 +1785,7 @@ PrefabInstance:
     - target: {fileID: 3794456128726740653, guid: 67e038ed3d0c97c478c999d1f6179aa8,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 0.20564766
+      value: 0.20564774
       objectReference: {fileID: 0}
     - target: {fileID: 3794456128726740653, guid: 67e038ed3d0c97c478c999d1f6179aa8,
         type: 3}
@@ -2039,12 +2040,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1287395672608468776, guid: cbf9827fdb937244181cf40c1e1371fb,
     type: 3}
   m_PrefabInstance: {fileID: 1545289698}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &894988847 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1061622945, guid: 894a0bf71e6a16e4a89e1f057413cc48,
-    type: 3}
-  m_PrefabInstance: {fileID: 3534737939947924517}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &902781129 stripped
 Transform:
@@ -3150,7 +3145,7 @@ PrefabInstance:
     - target: {fileID: 3794456128726740653, guid: 67e038ed3d0c97c478c999d1f6179aa8,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.050622154
+      value: -0.050617326
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67e038ed3d0c97c478c999d1f6179aa8, type: 3}
@@ -5030,16 +5025,6 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 885779361183007413, guid: d7cb7f2fdc6d5a64db7f8e9d63a906b0,
-        type: 3}
-      propertyPath: livesCounter
-      value: 
-      objectReference: {fileID: 894988847}
-    - target: {fileID: 885779361183007413, guid: d7cb7f2fdc6d5a64db7f8e9d63a906b0,
-        type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7cb7f2fdc6d5a64db7f8e9d63a906b0, type: 3}
 --- !u!1001 &1287395673414406965

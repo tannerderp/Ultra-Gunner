@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     Gun gunScript;
     Lives livesScript;
     Animator animator;
+    AudioSource hitSound;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         gunScript = gun.GetComponent<Gun>();
         livesScript = FindObjectOfType<Lives>();
         animator = GetComponent<Animator>();
+        hitSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -76,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) //get hit by alien bullets
     {
+        hitSound.Play();
         if (collision.name == "Alien Bullet(Clone)")
         {
             health -= 5;

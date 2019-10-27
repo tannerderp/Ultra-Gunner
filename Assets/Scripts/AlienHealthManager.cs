@@ -8,11 +8,22 @@ public class AlienHealthManager : MonoBehaviour
     [SerializeField] bool destroyParent;
     [SerializeField] GameObject parentObject;
 
+    AudioSource hitSound;
+
+    private void Start()
+    {
+        hitSound = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "bullet(Clone)") //take damage when hit by player bullet
         {
             health--;
+            if(gameObject.tag != "Donkey Nuetron")
+            {
+                hitSound.Play();
+            }
             if (health < 1)
             {
                 if (destroyParent == true)

@@ -7,6 +7,8 @@ public class AimingAlienArm : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject player;
 
+    [SerializeField] float timeBetweenBullet = 100f;
+
     private Vector3 target;
     private int bulletFireCooldown = 0;
     private float rotationZ;
@@ -35,7 +37,7 @@ public class AimingAlienArm : MonoBehaviour
     private void CheckCanFire()
     {
         Vector2 distance = transform.position - player.transform.position;
-        if (Mathf.Abs(distance.x)<9&& bulletFireCooldown > 100)
+        if (Mathf.Abs(distance.x)<9&& bulletFireCooldown > timeBetweenBullet)
         {
             FireBullet(difference, rotationZ);
             bulletFireCooldown = 0;
