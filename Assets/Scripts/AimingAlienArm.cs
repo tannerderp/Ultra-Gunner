@@ -7,7 +7,7 @@ public class AimingAlienArm : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject player;
 
-    [SerializeField] float timeBetweenBullet = 100f;
+    [SerializeField]  public float timeBetweenBullet = 100f;
 
     private Vector3 target;
     private int bulletFireCooldown = 0;

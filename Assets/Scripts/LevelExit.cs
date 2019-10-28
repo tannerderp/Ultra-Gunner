@@ -11,7 +11,7 @@ public class LevelExit : MonoBehaviour
         if (collision.gameObject.tag == "fall collider")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        } 
     }
 
     public void ReloadScene()
@@ -23,5 +23,11 @@ public class LevelExit : MonoBehaviour
     {
         SceneManager.LoadScene("GameOver");
         Cursor.visible = true;
+    }
+
+    public void LoadTheEnd()
+    {
+        Cursor.visible = true;
+        SceneManager.LoadScene("TheEnd");
     }
 }
